@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate } from "react-router-dom";
 import { Routes, Route, NavLink } from "react-router-dom";
 
-import { FormikAbstraction, FormikBasicPage, FormikComponents, FormikYupPage,  RegisterPage } from "../03-forms/pages/";
+import { FormikAbstraction, FormikBasicPage, FormikComponents, FormikYupPage,  RegisterPage, RegisterFormikPage} from "../03-forms/pages/";
 
 
 import logo from "../logo.svg";
@@ -19,6 +19,14 @@ export const Navigation = () => {
                 className={({ isActive }) => (isActive ? "nav-active" : "")}
               >
                 Register Page
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/register-formik"
+                className={({ isActive }) => (isActive ? "nav-active" : "")}
+              >
+                Register Formik Page
               </NavLink>
             </li>
             <li>
@@ -63,6 +71,7 @@ export const Navigation = () => {
           <Route path="users" element={<h1>Users Page</h1>} />
           <Route path="home" element={<h1>Home Page</h1>} />
           <Route path="register" element={<RegisterPage />} />
+          <Route path="register-formik" element={<RegisterFormikPage />} />
           {/* Navigate sirve para navegar a una ruta en especifico y el replace es para que no pueda regresar */}
           <Route path="/*" element={<Navigate to="/home" replace />} />
         </Routes>
